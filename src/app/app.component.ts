@@ -6,5 +6,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'test';
+  title = 'Test file system';
+  public currentFolderId: string = '';
+ 
+  public onCurrentFolderId(id) {
+    this.currentFolderId = id;
+  }
 }

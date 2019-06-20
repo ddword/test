@@ -1,0 +1,48 @@
+<hr/>
+<div class="row center" style="height:100px;">
+  <div class="col-xs-6 col-md-6">
+  {{ currentFolderId }}
+    <div class="row">
+      <ngx-file-drop class="col" dropZoneLabel="Drop files here" (onFileDrop)="dropped($event)"
+      (onFileOver)="fileOver($event)" (onFileLeave)="fileLeave($event)">
+          <!--<ng-template let-openFileSelector="openFileSelector">
+            Optional custom content that replaces the the entire default content.
+            <button type="button" (click)="openFileSelector()">Browse Files</button>
+          </ng-template>-->
+      </ngx-file-drop>
+    </div>
+    <div class="row">  
+      <div class="col upload-table">
+        <table class="table">
+          <thead>
+              <tr>
+                  <th>Name</th>
+              </tr>
+          </thead>
+          <tbody class="upload-name-style">
+              <tr *ngFor="let item of files; let i=index">
+                  <td><strong>{{ item.relativePath }}</strong></td>
+              </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>  
+  </div>
+  <div class="col-xs-5 col-md-5 col-xs-offset-1 col-md-offset-1" style="margin-top:15px; height: 100px;">
+    <form [formGroup]="folderForm" class="create-folder" (ngSubmit)="onSubmitCreateFolder()">
+      <div class="row text-left" style="margin:5px;">
+        <label class="button" for="dirname" style="margin-right:10px;">New folder</label>
+        <input type="text"
+                name="dirname"
+                id="dirname"
+                placeholder = "dirname" 
+                formControlName="dirname"
+                (change)="onSelectFolder($event)">
+      </div>
+      <div class="text-left">    
+        <button type="submit" name="button" class="btn btn-primary" style="margin:10px;">Create folder</button>
+      </div>
+    </form>  
+  </div>
+</div>
+  

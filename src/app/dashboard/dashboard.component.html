@@ -1,0 +1,33 @@
+<div class="col" *ngIf = "_currentFolderId" (click)="onClickFolder($event)">
+  <i class="material-icons">arrow_upward</i>
+</div> 
+<div class="row text-left" *ngFor="let file of files">
+  <div  class="col group" *ngIf="file.is_folder">
+    <a href="" (click)="onClickFolder($event, file)">
+      <i class="material-icons">folder</i>
+      <span>{{ file.title }}</span>
+      <span>{{ file.id }}</span>
+    </a>
+    <span class="delete" (click)="onDelete($event, file.id)">
+      <i class="material-icons">delete</i>
+    </span>
+    <span class="move-to" (click)="onMoveTo($event, file.id)">
+      <i class="material-icons">forward</i>
+    </span>
+  </div>  
+</div>   
+ <div class="row text-left" *ngFor="let file of files" style="margin-top: 30px;">
+  <div class="col item" *ngIf="!file.is_folder">
+    <div>
+      <i class="material-icons">description</i>
+      <span>{{ file.title }}</span>
+      <span>{{ file.id }}</span>
+    </div>  
+    <span class="delete" (click)="onDelete($event, file.id)">
+      <i class="material-icons">delete</i>
+    </span>
+    <span class="move-to" (click)="onMoveTo($event, file.id)">
+      <i class="material-icons">forward</i>
+    </span>
+  </div>  
+</div> 

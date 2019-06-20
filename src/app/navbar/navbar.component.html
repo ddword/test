@@ -1,0 +1,15 @@
+<div class="row text-left">
+  <form [formGroup]="sessionForm" class="create-folder" (ngSubmit)="onSubmitSaveSession()">
+      <div class="row text-left" style="margin:5px;">
+        <label class="button" for="dirname" style="margin-right:10px;">Enter X-Session-Id</label>
+        <input type="text"
+                name="xSessionId"
+                id="xSessionId"
+                placeholder = "xSessionId" 
+                formControlName="xSessionId">
+      </div>
+      <div class="text-left">    
+        <button type="submit" name="button" class="btn btn-primary" style="margin:10px;">Save X-Session-Id</button>
+      </div>
+    </form> 
+</div>

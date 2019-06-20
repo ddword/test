@@ -1,0 +1,41 @@
+.group {
+  background-color: #e0e0e0;
+  margin: 5px;
+  padding: 10px;
+}
+.group, .group {
+  width: 75%;
+}
+
+.group a {
+  display: inline-block;
+  width: 80%;
+}
+
+.item i, .group i, .item span, .group span {
+  margin-right: 15px;
+}
+
+.item i, .item span, .group i, .group span {
+  height: 30px;
+  vertical-align: middle;
+}
+
+.item div {
+  display: inline-block;
+  width: 80%;
+  padding: 10px;
+}
+
+.delete, .move-to {
+  height: 100%;
+  display: inline-block;
+  margin: 10px 15px;
+} 
+
+.delete > i {
+  color: #a94442; 
+}
+.move-to > i {
+  color: #3c763d;
+}
